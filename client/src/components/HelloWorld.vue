@@ -1,6 +1,5 @@
 <template>
-  <div class="hello">
-   </div>
+<p>From Helloworld page</p>
 </template>
 
 <script>
