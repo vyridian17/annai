@@ -1,53 +1,64 @@
 <template>
-
-  <div class="header-wrapper">
-    <div class="navbar">
-      <div class="main-nav-container">
-        <img src="" id="logo" alt="tourGuideLogo" />
-        <div class="navbar">
-          <b-navbar toggleable="sm" type="blue">
-            <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-            <b-collapse id="nav-text-collapse" is-nav>
-              <b-navbar-nav>
-                <!-- <router-link to="/Home"> -->
-                  <b-nav-text id="">All Guides</b-nav-text>
-                <!-- </router-link> -->
-                <!-- <router-link to="/register"> -->
-                  <b-nav-text id="">Register</b-nav-text>
-                <!-- </router-link> -->
-                <!-- <router-link to="/Guides"> -->
-                  <b-nav-text id="all" 
-                    >Login</b-nav-text
-                  >
-                <!-- </router-link> -->
-              </b-navbar-nav>
-            </b-collapse>
-          </b-navbar>
-        </div>
-      </div>
-    </div>
-    </div>
+  <div>
+    <b-navbar toggleable="lg" type="light" variant="primary">
+      <b-container>
+        <img src="https://placekitten.com/g/30/30" id="logo" alt="Kitten" />
+        <b-navbar-brand class="active-class" href="#"
+          >Tour Guides</b-navbar-brand
+        >
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-collapse id="nav-collapse" is-nav>
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <b-nav-form>
+              <b-form-input
+                size="sm"
+                class="mr-sm-2"
+                placeholder="Search for a guide"
+                v-model="guide"
+              ></b-form-input>
+              <b-button
+                size="sm"
+                class="my-2 my-sm-0"
+                type="submit"
+                @click.prevent="findGuide"
+                >Search</b-button
+              >
+            </b-nav-form>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template slot="button-content"><em>User</em></template>
+              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-container>
+    </b-navbar>
+  </div>
 </template>
-
-
-
-  <!-- <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">Tour Guide</b-navbar-brand>
-
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-    <b-collapse id="nav-collapse" is-nav> -->
-
-
-      <!-- Right aligned nav items -->
-    <!-- </b-collapse>
-  </b-navbar>
-</div> -->
-
 
 <script>
 export default {
- name: "Navbar"
-}
+  name: "Navbar",
+  data() {
+    return {
+      guide: "",
+    };
+  },
+  methods: {
+    findGuide() {
+      console.log("findGuide");
+    },
+  },
+};
 </script>
 
+<style scoped>
+#logo {
+  height: 50px;
+  width: 90px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+</style>
