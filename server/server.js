@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 5000;
 // middleware
 app.use(cors());
 app.use(express.json());
-app.use(morgan());
 
 // routes
 app.get("/guides", async (req, res) => {

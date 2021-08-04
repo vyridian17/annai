@@ -23,13 +23,14 @@ export default {
   components: {
     StripeCheckout,
   },
-  data () {
+   data () {
+    this.guide = this.$store.state.selectedGuide;
     this.publishableKey = "pk_test_51JKcaVJEzx4OWsdKM7OUINRiAb2jvkNEDvkviGKded4631cm456GNj5usis6ZJ2Q07tAe20OautxgOQVv08sbmlt00jiAEFmH4";
     return {
-      loading: false,
+     loading: false,
       lineItems: [
         {
-          price: this.$store.state.selectedGuide.price_id, // The id of the one-time price you created in your Stripe dashboard
+          price: this.$store.state.selectedGuide.price_id, // this.$store.state.selectedGuide.price_id  The id of the one-time price you created in your Stripe dashboard
           quantity: 1
           // images: this.$store.state.selectedGuide.img
         },
