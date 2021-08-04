@@ -2,21 +2,24 @@
   <div id="app">
     <div id="nav">
       <Navbar />
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <AllGuides />
     </div>
-    <router-view />
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import AllGuides from "./components/AllGuides.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
+    AllGuides
   },
+  mounted: function() {
+    console.log(this.$store.state.selectedGuide);
+  }
 };
 </script>
 
