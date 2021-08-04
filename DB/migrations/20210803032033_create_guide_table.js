@@ -10,6 +10,7 @@ exports.up = function (knex) {
         table.string('languages').notNullable();
         table.integer('hourly_rate').notNullable();
         table.text('info');
+        table.string('img');
         table.timestamps(true, true);
 
     })
