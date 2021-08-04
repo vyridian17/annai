@@ -10,7 +10,9 @@
             <h6>Languages: {{guide.languages}}</h6>
             <h6>Hourly Rate: ¥{{guide.hourly_rate}}</h6>
               <b-card-text></b-card-text>
+              <router-link to="/checkout">
               <b-button href="#" variant="primary" @click="setGuide()">Book</b-button>
+              </router-link>
             </b-card>
           </b-col>
         </div>
@@ -18,9 +20,6 @@
     </div>
     </b-container>
 </template>
-
-
-
 
 
 <script>
@@ -33,6 +32,7 @@ export default {
         setGuide() {
             this.$store.commit('setSelectedGuide', this.guide);
             console.log(this.$store.state.selectedGuide);
+            // this.$router.push("/checkout");
         }
     }
 }

@@ -3,12 +3,16 @@ require('dotenv').config();
 const cors = require("cors");
 const knex = require("./knex");
 const app = express();
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+const { v4: uuid } = require("uuid");
+
 
 const PORT = process.env.PORT || 5000;
 
 // middleware
 app.use(cors());
 app.use(express.json());
+app.use(morgan());
 
 // routes
 app.get("/guides", async (req, res) => {
@@ -30,20 +34,62 @@ app.get("/guides/:id", async (req, res) => {
     }
 })
 
-app.post("/guides", async (req, res) => {
+app.post("/guides/new", async (req, res) => {
     try {
-        const guide = req.body
+        // const id = uuid();
+        const { first_name, last_name, languages, hourly_rate, info, img, email, tour_locations } = req.body;
+        const product = await stripe.products.create({
+            name: first_name + last_name,
+            description: info,
+        })
+        const price = await stripe.prices.create({
+            unit_amount: hourly_rate,
+            currency:'jpy',
+            product: product.id,
+        })
+        const guide = {
+            id: uuid(),
+            first_name,
+            last_name,
+            email,
+            tour_locations,
+            languages,
+            hourly_rate:price.unit_amount,
+            info,
+            img,
+            price_id: price.id,
+        }
+
         const response = await knex("guide").insert(guide);
         res.send("success");
     } catch (err) {
         console.error(err);
     }
 })
-/*
 
-{id: 1, first_name: 'Bob', last_name: "Marley", email: "ishotthesherrif@deputy.com", tour_locations: "Tokyo", languages: "English", hourly_rate: 6000, info: " "},
+// app.post('/create-checkout-session', cors(), async (req, res) => {
+//     const session = await stripe.checkout.sessions.create({
+//       payment_method_types: [
+//         'card',
+//       ],
+//       line_items: [
+//         {
+//           // TODO: replace this with the `price` of the product you want to sell
+//           price: '{{PRICE_ID}}',
+//           quantity: 1,
+//         },
+//       ],
+//       mode: 'payment',
+//       success_url: `${YOUR_DOMAIN}/success.html`,
+//       cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+//     });
+//     res.redirect(303, session.url)
+//   });
+// /*
 
-*/
+// {id: 1, first_name: 'Bob', last_name: "Marley", email: "ishotthesherrif@deputy.com", tour_locations: "Tokyo", languages: "English", hourly_rate: 6000, info: " "},
+
+// */
 
 
 app.delete("/guides/:id", async (req, res) => {

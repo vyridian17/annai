@@ -11,8 +11,8 @@ exports.up = function (knex) {
         table.integer('hourly_rate').notNullable();
         table.text('info');
         table.string('img');
+        table.string('price_id');
         table.timestamps(true, true);
-
     })
 
 };
