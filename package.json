@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "cd client && yarn && yarn serve",
-    "build": "cd client && yarn && yarn build",
+    "serve": "cd client && yarn && vue-cli-service serve",
+    "build": "cd client && yarn && vue-cli-service build",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "postinstall": "yarn build"
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/rituraj8503/tour-guide-app#readme",
   "dependencies": {
     "@vue-stripe/vue-stripe": "^4.2.5",
+    "@vue/cli-service": "^4.5.13",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "bootstrap-vue": "^2.21.2",
