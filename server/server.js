@@ -20,7 +20,7 @@ app.use(express.json());
 app.get("/guides", async (req, res) => {
     try {
         const allGuides = await knex.select().table('guide');
-        res.json(allGuides);
+        res.send(allGuides);
     } catch (err) {
         console.error(err);
     }
