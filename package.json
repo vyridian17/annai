@@ -12,7 +12,7 @@
     "build": "cd client && vue-cli-service build",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
-    "postinstall": "npm run build"
+    "postinstall": "yarn build"
   },
   "repository": "git+https://github.com/rituraj8503/tour-guide-app.git",
   "author": "rituraj8503 <rituraj8@uw.edu>",
