@@ -13,7 +13,7 @@
 
 <script>
 import GuideInfo from "./GuideInfo.vue";
-const axios = require("axios");
+import axios from "axios";
 export default {
     name: 'AllGuides',
     methods: {
