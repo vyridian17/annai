@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "cd client && yarn && vue-cli-service serve",
-    "build": "cd client && yarn && vue-cli-service build",
+    "serve": "cd client && yarn && yarn serve",
+    "build": "cd client && yarn && yarn build",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "postinstall": "yarn build"
@@ -23,11 +23,6 @@
   "homepage": "https://github.com/rituraj8503/tour-guide-app#readme",
   "dependencies": {
     "@vue-stripe/vue-stripe": "^4.2.5",
-    "@vue/cli": "^4.5.13",
-    "@vue/cli-plugin-babel": "^4.5.13",
-    "@vue/cli-plugin-eslint": "^4.5.13",
-    "@vue/cli-plugin-vuex": "^4.5.13",
-    "@vue/cli-service": "^4.5.13",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "bootstrap-vue": "^2.21.2",
@@ -38,11 +33,23 @@
     "pg": "^8.7.1",
     "stripe": "^8.167.0",
     "uuid": "^8.3.2",
-    "vue": "^2.6.14",
-    "vue-template-compiler": "^2.6.14"
+    "vue": "^2.6.14"
   },
   "devDependencies": {
     "express": "^4.17.1",
-    "serve-static": "^1.14.1"
+    "serve-static": "^1.14.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.2.1",
+    "vue-template-compiler": "^2.6.11"
+
   }
 }
