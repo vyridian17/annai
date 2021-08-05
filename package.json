@@ -9,13 +9,10 @@
     "build": "cd client && vue-cli-service build",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
-    "postinstall": "nom run build"
+    "postinstall": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rituraj8503/tour-guide-app.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/rituraj8503/tour-guide-app.git",
+  "author": "rituraj8503 <rituraj8@uw.edu>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rituraj8503/tour-guide-app/issues"

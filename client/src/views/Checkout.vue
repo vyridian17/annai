@@ -9,7 +9,7 @@
       :cancel-url="cancelURL"
       @loading="v => loading = v"
     />
-    <button @click="submit">Pay now!</button>
+    <button @click="submit" class="btn btn-secondary d-flex justify-content-center mx-auto">Pay now!</button>
   </div>
 </template>
 
@@ -48,3 +48,12 @@ export default {
   },
 };
 </script>
+
+<style>
+.pay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+</style>

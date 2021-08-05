@@ -15,13 +15,13 @@
     <b-dropdown-item href="#">French</b-dropdown-item>
     <b-dropdown-item href="#">Chinese</b-dropdown-item>
   </b-dropdown>
-
+<div>
   <b-dropdown id="dropdown-right" right text="Area" variant="" class="m-2">
     <b-dropdown-item href="#">Tokyo</b-dropdown-item>
     <b-dropdown-item href="#">Kyoto</b-dropdown-item>
     <b-dropdown-item href="#">Osaka</b-dropdown-item>
   </b-dropdown>
-
+</div>
 
           <b-navbar-nav class="ml-auto">
             
@@ -60,5 +60,10 @@ export default {
   width: 90px;
   cursor: pointer;
   margin-right: 10px;
+}
+
+.navbar{
+margin-bottom: 10px;
+
 }
 </style>

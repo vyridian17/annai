@@ -26,4 +26,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+body{
+  background-image: url("https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+</style>
