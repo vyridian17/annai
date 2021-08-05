@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "cd client && vue-cli-service serve",
+    "build": "cd client && vue-cli-service build",
     "start": "node server/server.js",
-    "dev": "nodemon server/server.js"
+    "dev": "nodemon server/server.js",
+    "postinstall": "nom run build"
   },
   "repository": {
     "type": "git",
@@ -20,16 +23,20 @@
   "homepage": "https://github.com/rituraj8503/tour-guide-app#readme",
   "dependencies": {
     "@vue-stripe/vue-stripe": "^4.2.5",
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "bootstrap-vue": "^2.21.2",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
     "knex": "^0.95.9",
     "morgan": "^1.10.0",
     "pg": "^8.7.1",
     "stripe": "^8.167.0",
     "uuid": "^8.3.2",
     "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "serve-static": "^1.14.1"
   }
 }

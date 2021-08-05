@@ -9,7 +9,7 @@ export default new Vuex.Store({
     selectedGuide: {}
   },
   mutations: {
-    setGuides(state, guides){
+    setGuides(state, guides) {
       state.guides = guides;
     },
     setSelectedGuide(state, guide){

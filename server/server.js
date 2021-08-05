@@ -1,6 +1,8 @@
 const express = require("express");
 require('dotenv').config();
+const serveStatic = require("serve-static")
 const cors = require("cors");
+const path = require('path');
 const knex = require("./knex");
 const app = express();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
@@ -8,6 +10,7 @@ const { v4: uuid } = require("uuid");
 
 
 const PORT = process.env.PORT || 5000;
+app.use(serveStatic(path.join(__dirname, 'dist')));
 
 // middleware
 app.use(cors());

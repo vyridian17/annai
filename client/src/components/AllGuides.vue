@@ -17,7 +17,7 @@ export default {
     methods: {
         async getGuides() {
             try {
-                const allGuides = await fetch("http://localhost:5000/guides");
+                const allGuides = await fetch("/guides");
                 const jsonAllGuides = await allGuides.json();
                 this.$store.commit('setGuides', jsonAllGuides);
                 console.log(this.$store.state.guides);
@@ -28,7 +28,7 @@ export default {
     },
     created: async function() {
             try {
-                const allGuides = await fetch("http://localhost:5000/guides");
+                const allGuides = await fetch("/guides");
                 const jsonAllGuides = await allGuides.json();
                 this.$store.commit('setGuides', jsonAllGuides);
                 console.log(this.$store.state.guides);
