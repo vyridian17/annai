@@ -104,6 +104,14 @@ app.delete("/guides/:id", async (req, res) => {
     }
 })
 
+app.get("*", async (req, res) => {
+    try {
+        res.send("Hola Mundo");
+    } catch (err) {
+        console.error(err);
+    }
+})
+
 app.listen(PORT, (req, res) => {
     console.log(`App listening at http://localhost:${PORT}`);
 })
