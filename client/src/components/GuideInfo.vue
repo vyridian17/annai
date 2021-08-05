@@ -6,7 +6,7 @@
           <b-col l="4">
             <b-card style="max-width: 20rem;" class="mb-2">
             <h6> {{guide.first_name}} {{guide.last_name}}</h6>
-            <img :src="`${guide.img}`" alt="">
+            <img src="../assets/Logo.png" id="logo" alt="logo">
             <h6>Languages: {{guide.languages}}</h6>
             <h6>Hourly Rate: ¥{{guide.hourly_rate}}</h6>
               <b-card-text></b-card-text>
