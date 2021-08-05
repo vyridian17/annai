@@ -23,6 +23,10 @@
   "homepage": "https://github.com/rituraj8503/tour-guide-app#readme",
   "dependencies": {
     "@vue-stripe/vue-stripe": "^4.2.5",
+    "@vue/cli": "^4.5.13",
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-plugin-vuex": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
@@ -34,7 +38,8 @@
     "pg": "^8.7.1",
     "stripe": "^8.167.0",
     "uuid": "^8.3.2",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
     "express": "^4.17.1",
