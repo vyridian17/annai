@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="light" variant="primary">
       <b-container>
-        <img src="https://placekitten.com/g/30/30" id="logo" alt="Kitten" />
+        <img src="Logo.png" id="logo" alt="Logo" />
         <b-navbar-brand class="active-class" href="#"
           >Tour Guides</b-navbar-brand
         >

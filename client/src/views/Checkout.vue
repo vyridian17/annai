@@ -30,7 +30,7 @@ export default {
      loading: false,
       lineItems: [
         {
-          price: this.$store.state.selectedGuide.price_id, // this.$store.state.selectedGuide.price_id 
+          price: '',
           quantity: 1
           // images: this.$store.state.selectedGuide.img
         },
@@ -42,7 +42,9 @@ export default {
   methods: {
     submit () {
       // You will be redirected to Stripe's secure checkout page
-      console.log(this.$store.state.selectedGuide.price_id);
+      var price_id = this.$store.state.selectedGuide.price_id;
+      console.log(`Price ID is: ${price_id}`);
+      this.lineItems[0].price = price_id, // Update the price on the line item with the DB value
       this.$refs.checkoutRef.redirectToCheckout();
     },
   },
