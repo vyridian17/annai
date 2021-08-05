@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "cd client && vue-cli-service serve",
-    "build": "cd client && vue-cli-service build",
+    "serve": "cd client && yarn && yarn serve",
+    "build": "cd client && yarn && yarn build",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "postinstall": "yarn build"
