@@ -1,7 +1,5 @@
 <template>
   <div>
-  <p>Checkout page!</p>
-
     <stripe-checkout
       ref="checkoutRef"
       mode="payment"
