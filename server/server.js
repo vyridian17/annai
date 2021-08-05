@@ -36,6 +36,49 @@ app.get("/guides/:id", async (req, res) => {
     }
 })
 
+app.get("/guides/price/:price", async (req, res) => {
+    try {
+        const price = req.params.price;
+        const guides = await knex.select().table('guide').where('hourly_rate', '<=', price);
+        res.json(guides);
+    } catch (err) {
+        console.error(err);
+    }
+})
+
+app.get("/guides/location/:location", async (req, res) => {
+    try {
+        const location = req.params.location;
+        const guides = await knex.select().table('guide').where('tour_location', location);
+        res.json(guides);
+    } catch (err) {
+        console.error(err);
+    }
+})
+
+app.get("/guides/language/:language", async (req, res) => {
+    try {
+        const language = req.params.language;
+        const guides = await knex.select().table('guide').where('languages', language);
+        res.json(guides);
+    } catch (err) {
+        console.error(err);
+    }
+})
+
+app.get("/guides/:language/:location/:price", async (req, res) => {
+    try {
+        const language = req.params.language;
+        const location = req.params.location;
+        const price = req.params.price;
+        const guides = await knex.select().table('guide').where({'languages': language, 'tour_locations': location, 'hourly_rate': price});
+        res.json(guides);
+    } catch (err) {
+        console.error(err);
+    }
+    
+})
+
 app.post("/guides/new", async (req, res) => {
     try {
         // const id = uuid();

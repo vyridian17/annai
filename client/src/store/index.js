@@ -6,7 +6,10 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     guides: [],
-    selectedGuide: {}
+    selectedGuide: {},
+    price: 0,
+    language: "",
+    location: ""
   },
   mutations: {
     setGuides(state, guides) {
@@ -14,6 +17,15 @@ export default new Vuex.Store({
     },
     setSelectedGuide(state, guide){
       state.selectedGuide = guide;
+    },
+    setPrice(state, price) {
+      state.price = price;
+    },
+    setLanguage(state, language) {
+      state.language = language;
+    },
+    setLocation(state, location) {
+      state.location = location;
     }
   },
   actions: {},

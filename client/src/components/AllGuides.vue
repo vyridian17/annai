@@ -28,7 +28,7 @@ export default {
             }
         }
     },
-    created: async function() {
+    mounted: async function() {
             try {
                 const allGuides = await axios.get("/guides");
                 console.log(allGuides);

@@ -32,6 +32,7 @@ export default {
         setGuide() {
             this.$store.commit('setSelectedGuide', this.guide);
             console.log(this.$store.state.selectedGuide);
+            
             // this.$router.push("/checkout");
         }
     }
