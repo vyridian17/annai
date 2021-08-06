@@ -1,8 +1,7 @@
 <template>
-    <div>
+    <div v-if="this.$store.state.loggedIn">
         <div v-for="guide of this.$store.state.guides" :key="guide.id">
             <div>
-
                 <GuideInfo :guide="guide"/>
             </div>
         </div>

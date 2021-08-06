@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="this.$store.state.loggedIn">
     <stripe-checkout
       ref="checkoutRef"
       mode="payment"
@@ -33,7 +33,7 @@ export default {
           // images: this.$store.state.selectedGuide.img
         },
       ],
-      successURL: 'https://stripe.com/docs/api/products',
+      successURL: 'http://localhost:8080/Success',
       cancelURL: 'https://stripe.com/docs/payments/checkout/client#create-products-and-prices',
     };
   },

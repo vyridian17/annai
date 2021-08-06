@@ -1,6 +1,6 @@
 <template>
   <b-container class="d-flex align-items-center justify-content-center">
-    <div >
+    <div>
       <b-row>
         <div >
           <b-col l="4">
@@ -9,6 +9,7 @@
             <img :src="`${guide.img}`" alt="">
             <h6 class="d-flex align-items-center justify-content-center">Languages: {{guide.languages}}</h6>
             <h6 class="d-flex align-items-center justify-content-center">Hourly Rate: ¥{{guide.hourly_rate}}</h6>
+            <h6 class="d-flex align-items-center justify-content-center">Area: {{guide.tour_locations}}</h6>
               <b-card-text></b-card-text>
               <router-link to="/checkout">
               <b-button class="d-flex align-items-center justify-content-center" href="#" variant="primary" @click="setGuide()">Book</b-button>
@@ -32,7 +33,7 @@ export default {
         setGuide() {
             this.$store.commit('setSelectedGuide', this.guide);
             console.log(this.$store.state.selectedGuide);
-            
+
             // this.$router.push("/checkout");
         }
     }
@@ -40,7 +41,9 @@ export default {
 </script>
 
 <style scoped>
-
+h6 {
+  font-size: 15px;
+}
 .card {
   display: flex;
   align-items: center;

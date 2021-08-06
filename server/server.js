@@ -71,7 +71,7 @@ app.get("/guides/:language/:location/:price", async (req, res) => {
         const language = req.params.language;
         const location = req.params.location;
         const price = req.params.price;
-        const guides = await knex.select().table('guide').where({'languages': language, 'tour_locations': location, 'hourly_rate': price});
+        const guides = await knex('guide').where({'languages': language, 'tour_locations': location}).andWhere('hourly_rate', '<=', price).select();
         res.json(guides);
     } catch (err) {
         console.error(err);
